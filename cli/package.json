@@ -13,6 +13,9 @@
   "dependencies": {
     "@stricli/core": "^1.0.0"
   },
+  "scripts": {
+    "dev": "bun --watch src/bin/cli.ts"
+  },
   "prettier": {
     "semi": false
   }

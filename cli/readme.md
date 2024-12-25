@@ -1,15 +1,11 @@
-# stricli-bun-example
+## Setup
 
-To install dependencies:
-
-```bash
-bun install
+```
+bun i
 ```
 
-To run:
+## Run
 
-```bash
-bun run ./src/bin/cli.ts
 ```
-
-This project was created using `bun init` in bun v1.1.22. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+bun dev
+```
