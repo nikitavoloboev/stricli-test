@@ -1,10 +1,10 @@
-import { buildApplication, buildRouteMap } from "@stricli/core";
-import { command as echo } from "./commands/echo.ts";
+import { buildApplication, buildRouteMap } from "@stricli/core"
+import { command as echo } from "./commands/echo.ts"
 import {
   buildUnaryMathCommand,
   buildBinaryMathCommand,
   buildVariadicMathCommand,
-} from "./commands/math.ts";
+} from "./commands/math.ts"
 
 const math = buildRouteMap({
   routes: {
@@ -17,7 +17,7 @@ const math = buildRouteMap({
   docs: {
     brief: "Various math operations",
   },
-});
+})
 
 const root = buildRouteMap({
   routes: {
@@ -27,8 +27,8 @@ const root = buildRouteMap({
   docs: {
     brief: "All available example commands",
   },
-});
+})
 
 export const app = buildApplication(root, {
   name: "stricli-bun-example",
-});
+})

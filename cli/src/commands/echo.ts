@@ -1,14 +1,14 @@
-import { buildCommand, numberParser } from "@stricli/core";
+import { buildCommand, numberParser } from "@stricli/core"
 
 type Flags = {
-  readonly count?: number;
-};
+  readonly count?: number
+}
 
 export const command = buildCommand({
   func: (flags: Flags, text: string) => {
-    const count = flags.count ?? 1;
+    const count = flags.count ?? 1
     for (let i = 0; i < count; ++i) {
-      console.log(text);
+      console.log(text)
     }
   },
   parameters: {
@@ -34,4 +34,4 @@ export const command = buildCommand({
   docs: {
     brief: "Echo the first argument to the console",
   },
-});
+})

@@ -14,6 +14,6 @@
     "@stricli/core": "^1.0.0"
   },
   "prettier": {
-    "semi": true
+    "semi": false
   }
 }

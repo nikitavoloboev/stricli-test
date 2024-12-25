@@ -3,24 +3,24 @@ import {
   numberParser,
   type Command,
   type CommandContext,
-} from "@stricli/core";
+} from "@stricli/core"
 
 type MathFunction = keyof {
   [F in keyof Math as Math[F] extends (...values: number[]) => number
     ? F
-    : never]: F;
-};
+    : never]: F
+}
 
 type MathFunctionArity = {
-  [F in MathFunction as Parameters<Math[F]>["length"]]: F;
-};
+  [F in MathFunction as Parameters<Math[F]>["length"]]: F
+}
 
 export function buildUnaryMathCommand(
   op: MathFunctionArity[1],
 ): Command<CommandContext> {
   return buildCommand({
     func: (flags: {}, input: number) => {
-      console.log(Math[op](input));
+      console.log(Math[op](input))
     },
     parameters: {
       positional: {
@@ -36,7 +36,7 @@ export function buildUnaryMathCommand(
     docs: {
       brief: `Run ${op} on input`,
     },
-  });
+  })
 }
 
 export function buildBinaryMathCommand(
@@ -44,7 +44,7 @@ export function buildBinaryMathCommand(
 ): Command<CommandContext> {
   return buildCommand({
     func: (flags: {}, input1: number, input2: number) => {
-      console.log(Math[op](input1, input2));
+      console.log(Math[op](input1, input2))
     },
     parameters: {
       positional: {
@@ -64,7 +64,7 @@ export function buildBinaryMathCommand(
     docs: {
       brief: `Run ${op} on inputs`,
     },
-  });
+  })
 }
 
 export function buildVariadicMathCommand(
@@ -72,7 +72,7 @@ export function buildVariadicMathCommand(
 ): Command<CommandContext> {
   return buildCommand({
     func: (flags: {}, ...inputs: number[]) => {
-      console.log(Math[op](...inputs));
+      console.log(Math[op](...inputs))
     },
     parameters: {
       positional: {
@@ -86,5 +86,5 @@ export function buildVariadicMathCommand(
     docs: {
       brief: `Run ${op} on inputs`,
     },
-  });
+  })
 }
